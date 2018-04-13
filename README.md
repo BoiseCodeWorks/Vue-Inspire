@@ -106,10 +106,10 @@ https://night-class-server.herokuapp.com/api/auth/logout - destroy stored sessio
 http://www.splashbase.co/api/v1/images/random - retrieves a random image
 
 ### Quote Request
-https://night-class-server.herokuapp.com/api/auth/quotes - retrieves a random quote
+https://night-class-server.herokuapp.com/api/quotes - retrieves a random quote
 
 ### Weather Request
-https://night-class-server.herokuapp.com/api/auth/weather - retrieves the weather
+https://night-class-server.herokuapp.com/api/weather - retrieves the weather
 
 
 ### EXTENSION IDEAS 
