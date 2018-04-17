@@ -103,7 +103,7 @@ https://night-class-server.herokuapp.com/api/auth/logout - destroy stored sessio
 ## Other Requests
 
 ### Image Request
-http://www.splashbase.co/api/v1/images/random - retrieves a random image
+https://night-class-server.herokuapp.com/api/images - retrieves a random image
 
 ### Quote Request
 https://night-class-server.herokuapp.com/api/quotes - retrieves a random quote
