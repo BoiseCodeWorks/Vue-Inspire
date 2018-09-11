@@ -19,7 +19,7 @@ Below you will see an image that you may use for inspiration.
 
 ### Adding the functionality 
 
-The todolist is perhaps one of the most important features of this application. You will need to provide the user a way to add items to a list to be monitored for tracking. The user should be able to add or remove items easily as well as be able to indicate an items status if they don't want to remove the item(completed).
+The todolist is perhaps one of the most important features of this application. You will need to provide the user a way to add items to a list to be monitored for tracking. The user should be able to add or remove items easily as well as be able to indicate an items status if they don't want to remove the item(completed). Use Firestore to persist data.
 
 ### Prettify
 
@@ -27,89 +27,26 @@ You can use the picture above as an idea for laying out your site. One of the ma
 
 ## The API
 
-### Todo model
+### Todo model Example
 ```javascript
 {
-    name: { type String, required: true}               //has to be a string
-    description: { type: String, required: true},      //has to be a string
-    completed: { type: Boolean, required: true},       //has to be a bool
-    userId: {type: ObjectId, ref: 'User'}              //has to be a users id
+    name: { type String, required: true}                            //has to be a string
+    description: { type: String, required: true},                   //has to be a string
+    completed: { type: Boolean, required: true, default: false},    //has to be a bool
+    userId: {type: ObjectId, ref: 'User'}                           //has to be a users id
 }
 ```
-
-### Post Request Method
-
-#### Create Todo
-https://night-class-server.herokuapp.com/api/todos - new todo object as data for request
-
-
-### Get Request Method
-
-#### Get One Todo
-https://night-class-server.herokuapp.com/api/todos/:todoId - no data passed for request
-
-#### Get Entire Todo List 
-https://night-class-server.herokuapp.com/api/todos - no data passed for request
-
-
-### Put Request Method
-
-#### Edit Todo
-https://night-class-server.herokuapp.com/api/todos/:todoId - edited todo object as data for request
-
-
-### Delete Request Method
-
-#### Delete Todo
-https://night-class-server.herokuapp.com/api/todos/:todoId - no data passed for request
-
-
-## The Auth
-
-### User Model
-```javascript
-{
-    name: { type: String, required: true },             //has to be a string
-    password: { type: String, required: true },         //has to be a string
-    email: {type: String, required: true, unique: true} //has to be a string and cant match another in the Database
-}
-```
-
-
-### Post Request Methods
-
-#### Register User
-creating a new user
-https://night-class-server.herokuapp.com/api/auth/register - new user object as data for request it will log you in, create a session, and return a user
-
-#### Login User
-getting an existing user from the database
-https://night-class-server.herokuapp.com/api/auth/login - user email and password as data for request it will create a session, and return a user
-
-
-### Get Request Method
-
-#### Authenticate User
-automatically getting a user based on stored sessions or cookies in the browser
-https://night-class-server.herokuapp.com/api/auth/authenticate - stored session in browser used as data for request it will log you in and return user by finding the stored session in the DB
-
-
-### Delete Request Method
-
-#### Logout User
-delete the current users session(logout)
-https://night-class-server.herokuapp.com/api/auth/logout - destroy stored session in DB
 
 ## Other Requests
 
 ### Image Request
-https://night-class-server.herokuapp.com/api/images - retrieves a random image
+http://bcw-sandbox.herokuapp.com/api/images - retrieves a random image
 
 ### Quote Request
-https://night-class-server.herokuapp.com/api/quotes - retrieves a random quote
+http://bcw-sandbox.herokuapp.com/api/quotes - retrieves a random quote
 
 ### Weather Request
-https://night-class-server.herokuapp.com/api/weather - retrieves the weather
+http://bcw-sandbox.herokuapp.com/api/weather - retrieves the weather
 
 
 ### EXTENSION IDEAS 
@@ -131,11 +68,11 @@ https://night-class-server.herokuapp.com/api/weather - retrieves the weather
 
 ## REQUIREMENTS:
  - Visualization
-   - The data from the services are each rendered. Quote, Image, Weather, Todo
+   - The data from Quote, Image, Weather, and Todo are each rendered.
    - The image should be on large display with at least one other element positioned over the top of the image.
  - Functionality
     - The todolist allows items to be added and removed from a list
     - The todolist takes advantage of the Todo API request to provide persistent data through our database Server
 
 ### Finished?
-When You are finished please submit the link to the project in the backpack
+When You are finished please deploy and submit the link to the project in the backpack.
